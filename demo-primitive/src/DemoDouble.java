@@ -5,6 +5,6 @@ public class DemoDouble {
         double d3 = d1+d2;
         
         float f1 = 0.1f;
-        System.out.println(d1+f1);
+        System.out.println(d1+f1+d3);
     }
 }

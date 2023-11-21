@@ -17,5 +17,8 @@ public class DemoChar {
         String s1 = "sawadeecup";
         char c12 = '好'; 
         System.out.println(c12);
+        System.out.println(gender+ c1+ c2+ c3+ c4+ c5+ c6+ c7+ c8+ c9+ c10+ c11);
+        System.out.println(s1);
+        System.out.println(isVariable && isGoodDay);
     }
 }
