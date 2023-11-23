@@ -82,14 +82,14 @@ public class DemoOperator {
         System.out.println(w);
 
         int grade = 59;
-        boolean isPass = true;
+        boolean isPassed = true;
         char letterGrade = 'Z';
 
         if (grade<=0 || grade>100){
             throw new IllegalArgumentException("All grade should be positive integer and maximum grade should be 100");
         } else {
             if (grade>=50){
-                isPass = true;
+                isPassed = true;
                 if (grade>=90){
                     letterGrade = 'A';
                 } else if (grade>=80){
@@ -102,11 +102,11 @@ public class DemoOperator {
                     letterGrade='E';
                 }
             } else {
-                isPass = false;
+                isPassed = false;
                 letterGrade = 'F';
             }
         }
-        if (isPass){
+        if (isPassed){
             System.out.println("This student can pass");
         } else {
             System.out.println("This student cannot pass");
@@ -215,7 +215,23 @@ public class DemoOperator {
         int barbie = 47;
         int gundum = barbie/10<1?0:barbie/10;
         int totalToy = barbie+(int)gundum;
-        System.out.println("gumdum is "+(int)gundum+" and total toy is "+totalToy);
+        System.out.println("barbie is "+(int)barbie+"gumdum is "+(int)gundum+" and total toy is "+totalToy);
+        
+        String url = "http://www.google.com"; // no string in C
+
+        if (url.length()<10|| "google".equals(url)|| url.contains("google")) {
+            System.out.println("it is google.com");
+        } else {
+            System.out.println("it is not google");
+        }
+
+        String empty = ""; // empty string, length = 0
+        empty += "go ahead";
+        if (!empty.isEmpty()){
+            System.out.println("String is not empty");
+        } else {
+            System.out.println("String is empty");
+        }
         
 
 
