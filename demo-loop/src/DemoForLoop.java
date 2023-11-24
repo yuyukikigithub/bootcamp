@@ -1,9 +1,13 @@
 public class DemoForLoop {
+
+    // for loop, .length() and .charAt() is important
     public static void main(String[] args) {
         int x = 2;
 
         System.out.println("The value of 'x' is "+x);
         // count initialization; counter's continue condition; counter's movement
+        // counter's condition --> 進入條件
+        // if counter condition empty, always true 
         // Step 1: int i = 0
         // Step 2: i < 4? i is 0
         // Step 3: yes - do inside: x*=2 System.out.println
@@ -137,7 +141,8 @@ public class DemoForLoop {
             }
         }
 
-        // continue
+        // continue, go to next fast, no need run more 'if' row
+        // if continue, first see counter's movement
         //sum up all odd number (0-100)
         int sum=0;
         for (int i = 0; i < 9; i++) {
@@ -159,14 +164,50 @@ public class DemoForLoop {
 
         System.out.println("sum is "+sum);
 
+        
+
+        
+
         String SearchP = "Pepper Pig is picking the packet.";
         int countP = 0;
         for (int i = 0; i < SearchP.length(); i++) {
-            if (SearchP.charAt(i)=='P'|| SearchP.charAt(i)=='p'){
-                countP+=1;
+            // if (SearchP.charAt(i)=='P'|| SearchP.charAt(i)=='p'){
+            //     countP+=1;
+            // }
+            if (!(SearchP.charAt(i)=='P'|| SearchP.charAt(i)=='p')) {
+                continue;
             }
+            countP+=1;
         }
         System.out.println("The number of P/p is "+countP);
+
+        // String str = "fish taken by fisherman is fresh enough to be deep fried";
+        String str = "there is no target char";
+        char target = 'f';
+        int n = 0;
+        boolean isFound = false;
+        for (int i = 0; i < str.length(); i++) {
+
+            // count n
+            // if (!(str.charAt(i)==target)){
+            //     continue;
+            // }
+            // n+=1;
+            // found = true;
+
+            // check the first char
+            if (str.charAt(i)==target){
+                n = i+1;
+                isFound = true;
+                break;
+            }
+        }
+        if (isFound){
+            // System.out.println("Found "+n+" 'f's in the string");
+            System.out.println("The fist target index is "+n);
+        } else {
+            System.out.println("not found");
+        }
 
         //break
         // jump out the loop
@@ -181,20 +222,41 @@ public class DemoForLoop {
                 continue;
             }
             sum10+=i10;
-            // System.out.println(sum10);
+            // if (sum10+i10>200){
+            //     break; 
+            // }
             if (sum10+i10>200){
-                // sum10+=i10;
-                // System.out.println("i is "+i10+" and sum is "+sum10);
-                break; 
-                
+                break;
             }
-            // sum10+=i10;
-            // System.out.println("i is "+i10+" and sum is "+sum10);
-            // sum10+=i10;
+            // after break ==> save the previous value
+            // e.g. num = i;
 
         }
-
         System.out.println("i is "+i10+" and sum is "+sum10);
+
+        int sum11 = 0;
+        int index = 0;
+        for (int i = 0; i < 101; i++) {
+            if (i%2==0) {
+                continue;
+            }
+            sum11 +=i;
+            // method 1
+            // if(sum11>200){
+            //     sum11-=i;
+            //     break;
+            // }
+            // after break ==> save the previous value
+            // index = i;
+            
+            // method 2
+            if(sum11+i>200){
+                index = i;
+                break;
+            }
+            
+        }
+        System.out.println("i is "+index+" sum is "+sum11);
         
     }
 }
