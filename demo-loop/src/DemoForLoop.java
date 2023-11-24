@@ -181,8 +181,9 @@ public class DemoForLoop {
                 continue;
             }
             sum10+=i10;
-            System.out.println(sum10);
+            // System.out.println(sum10);
             if (sum10+i10>200){
+                // sum10+=i10;
                 // System.out.println("i is "+i10+" and sum is "+sum10);
                 break; 
                 
