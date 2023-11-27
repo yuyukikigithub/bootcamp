@@ -1,4 +1,3 @@
-import java.util.Random;
 
 public class DemoIntArray {
     public static void main(String[] args) {
@@ -62,16 +61,52 @@ public class DemoIntArray {
         // boolean
         // String
         // 
-        boolean[] arrBoolean = new boolean[3] ;
+        boolean[] arrBoolean = new boolean[3] ; // boolean default false
         arrBoolean[0] = true;
         
         char [] arrChar = new char[] {'a','e','i','o','u'};
         String[] arrString = new String[] {"kenn","charlie","yuk","chung"};
 
-        System.out.println(arrBoolean);
-        System.out.println(arrChar);
-        System.out.println(arrString);
+        // System.out.println(arrBoolean);
+        // System.out.println(arrChar);
+        // System.out.println(arrString);
 
+        for (int i = 0; i < arr2.length; i++) {
+            System.out.println("arr2["+i+"] = "+arr2[i]);
+        }
+
+        for (int i = 0; i < arrBoolean.length; i++) {
+            System.out.println(arrBoolean[i]);
+        }
+
+        //default value of array {0,0,0}
+        int[] arr4 = new int[3]; 
+        for (int i = 0; i < arr4.length; i++) {
+            // arr4 store address of array object
+            // we use arr4[i] to find 3 values stored in the array object
+            arr4[i] = (i+1);
+            System.out.println(arr4[i]);
+        }
+        for (int i = arr4.length-1; i >= 0; i--) {
+            // arr4 store address of array object
+            // we use arr4[i] to find 3 values stored in the array object
+            arr4[i] = (i+1);
+            System.out.print(arr4[i]);
+            if (!(i==0)) {
+                System.out.print(" ");
+            }
+        }
+
+        //sentance 1
+        String str = "Hello"; // str2 is storing the address of String object Hello
+        //sentance 2
+        String str2 = new String ("Hello"); // str2 is storing the address of String object Hello
+        //sentance 3
+        String str3 = String.valueOf("Hello"); // str2 is storing the address of String object Hello
+
+        // primitive not object
+        // string is object
+        
 
     }
 }
