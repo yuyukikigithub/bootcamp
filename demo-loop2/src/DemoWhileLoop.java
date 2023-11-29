@@ -75,5 +75,7 @@ public class DemoWhileLoop {
         int[] arr4 = new int[] {46,12,34,25,6};
         
 
+        
+
     }
 }

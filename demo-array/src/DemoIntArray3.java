@@ -114,9 +114,35 @@ public class DemoIntArray3 {
         }
         System.out.println(Arrays.toString(arr3));
 
+        String s = "abcabcabcabcabcabc";
+        char[] arr4 = new char[s.length()];
+        // for (int i = 0; i < arr4.length; i++) {
+        //     arr4[i] = s.charAt(i);
+        // }
+        // System.out.println(Arrays.toString(arr4));
+
+        // Approach 1
+        for (int i = 0; i < s.length(); i++) {
+            arr4[i] = s.charAt(i);
+        }
+        System.out.println(Arrays.toString(arr4));
+        // Approach 2
+        char[] arr5 = s.toCharArray();
+        System.out.println(Arrays.toString(arr5));
+
+        // replace a -> c
+        char[] arr6 = new char[s.length()];
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == 'a') {
+                arr6[i] = 'c';
+                continue;
+            }
+            arr6[i] = s.charAt(i);
+        }
+        System.out.println(Arrays.toString(arr6));
+        System.out.println(s.replace('a', 'c'));
+
         
-
-
     }
 
 }
