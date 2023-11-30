@@ -37,6 +37,7 @@ public class DemoWrapper {
         Boolean isPassed2 = Boolean.valueOf(true); // 自己box
         Boolean isPassed3 = new Boolean(true);
 
+
         //Long
         Long l1 = 10L;
         //Integer i6 = l1; Long x->Integer
