@@ -43,5 +43,18 @@ public class DemoConversion {
         int i4 = 65650;
         char c4 = (char) i4;
         System.out.println(c4); // 65650 - 65535 = r
+
+        short ss1 = (short) 32768;
+        System.out.println(ss1);
+
+        int i1 = Integer.MAX_VALUE;
+        int j = i1+20;
+        System.out.println(j);
+
+        byte value = 127;
+        for (int i = 0; i < 10; i++) {
+            value++;
+            System.out.println(value);
+        }
     }
 }
