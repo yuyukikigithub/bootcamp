@@ -48,6 +48,9 @@ public class DemoWrapper {
         Integer i6 = (int)(long)l1; // int ->Integer autobox Long->long->int->Integer from right to left
         Long l2 = (long)(int)i6; // long -> Long autobox Integer->int->long->Long
             
+        Integer i7 = 10;
+        int i7i = i7; 
+        i7i. // un
         
     }
 }

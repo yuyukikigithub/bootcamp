@@ -56,5 +56,10 @@ public class DemoConversion {
             value++;
             System.out.println(value);
         }
+
+        float f4= (float) 1.3d;//cannot downcast, so explicit casting
+        System.out.println(f4);
+
+        double d2 = 1.3f;// upcast ok
     }
 }
