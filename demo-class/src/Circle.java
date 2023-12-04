@@ -10,6 +10,10 @@ public class Circle {
     public Circle() {
 
     }
+
+    // always write 'this' in constructor and method !!!
+    // this 內在 attribute, 外來 pass parameter,thats it
+
     public Circle(double radius){
         this.radius = radius;
     }
@@ -27,7 +31,8 @@ public class Circle {
     }
     //area
     public double area(){
-        return (this.radius*this.radius*Math.PI);
+        // return (this.radius*this.radius*Math.PI);
+        return Math.pow(this.radius,2)*Math.PI;
     }
 
     public static void main(String[] args) {
@@ -41,6 +46,11 @@ public class Circle {
         System.out.println("c2's radius = "+c2.getRadius());
         System.out.println("c2's diameter = "+c2.diameter());
         System.out.println("c2's area = "+c2.area());
+
+        c1=c2;
+        System.out.println("c1's radius = "+c1.getRadius());
+        System.out.println("c1's diameter = "+c1.diameter());
+        System.out.println("c1's area = "+c1.area());
     }
 
 }

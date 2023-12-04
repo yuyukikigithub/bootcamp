@@ -1,3 +1,4 @@
+import java.util.Arrays;
 
 public class JavaQuest14 {
   // Given an integer x, return true if x is a palindrome (迴文), and false
@@ -33,6 +34,7 @@ public class JavaQuest14 {
     System.out.println(res3);
     System.out.println(res4);
     System.out.println(res5);
+   
   }
 
   // Code a method here to return true if the integer is palindrome, otherwise
@@ -41,14 +43,20 @@ public class JavaQuest14 {
     // code here ...
     String num1= Integer.toString(num);
     char[] charArr = num1.toCharArray();
-
+    if (charArr.length<=1) {
+      return true;
+    }else {
+      boolean[] boo =  new boolean[charArr.length/2];
       for (int i = 0; i < charArr.length/2; i++) {
         if ((charArr[i]==charArr[charArr.length-1-i])) {
-          return true;
+          boo[i] =true;
+        }else{
+          boo[i]=false;
         }
       }
-      
-
-    return false;
+      for(boolean b : boo) if(!b) return false;
+        return true;
+    }
+    
   }
 }

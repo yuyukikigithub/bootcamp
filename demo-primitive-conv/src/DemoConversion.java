@@ -61,5 +61,19 @@ public class DemoConversion {
         System.out.println(f4);
 
         double d2 = 1.3f;// upcast ok
+
+        byte bb1 =(byte) 131;
+        System.out.println(bb1);// 131-128-128
+
+        short sss1 = (short) 40000;
+        System.out.println(sss1);//40000-32768-32768
+
+        int p = 150;
+        int q = 10;
+        // int dis =  0.9;
+        // System.out.println(p*q*dis);
+
+        
+
     }
 }

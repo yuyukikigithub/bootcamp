@@ -1,7 +1,9 @@
 // blueprint to produce Person objects
 public class Person { // 藍圖
-    //attribute
-    private String name ;// default null
+    // attribute
+    // private String name ;// default null
+    private String firstName;
+    private String lastName;
 
     private int age; // default int 0
 
@@ -9,95 +11,147 @@ public class Person { // 藍圖
 
     private String occupation;
 
-    //------------------------------------------------
+    // ------------------------------------------------
 
     // constructor (produce Person's object)
     public Person() {// create object
-        
+
     }
 
-    //constructor () / method ? 
-    public Person(String name, int age) {// create object with string
-        this.name = name; // this -> this object's _______ , in this case this.attribute/工具 
+    // constructor () / method ?
+    public Person(String lastName, String firstName, int age) {// create object with string
+        this.lastName = lastName; // this -> this object's _______ , in this case this.attribute/工具
+        this.firstName = firstName;
         this.age = age;
     }
 
-    //------------------------------------------------
-
-    //工具
-
-    //instance/object method, 工具即在object中 (vs static)
-    
-    //setter
-    public void setName(String name){ // object's 工具// put something into param -> 和外界溝通/修改
-        this.name = name;
-    }
-    public void setAge(int age){
-        this.age = age;
-    }
-    public void setHeight(double height){
+    // constructor name cannot be different from class name
+    public Person(String lastName, String firstName, double height, int age, String occu) {
+        this.lastName = lastName;
+        this.firstName = firstName;
         this.height = height;
-    }
-    public void setOccupation(String occu){
+        this.age = age;
         this.occupation = occu;
     }
 
-    
-    
+    // ------------------------------------------------
 
-    //getter
-    public String getName(){
-        return this.name;
+    // 工具
+
+    // instance/object method, 工具即在object中 (vs static, stand alone from object)
+
+    // setter
+    public void setName(String lastName, String firstName) { // object's 工具// put something into param -> 和外界溝通/修改
+        this.lastName = lastName;
+        this.firstName = firstName;
     }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public void setOccupation(String occu) {
+        this.occupation = occu;
+    }
+
+    // getter
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    public String getFullName() {
+        return this.lastName==null? this.firstName: this.firstName + " " + this.lastName;
+    }
+
+    public String firstLetterUpper(String abc) {
+        return abc.substring(0,1).toUpperCase().concat(abc.substring(1, abc.length()));
+        //String.valueOf
+    }
+
+    public String getNameFullLetter() {
+        String lastName = this.lastName;
+        String firstName = this.firstName;
+        return firstLetterUpper(lastName)
+                .concat(" ")
+                .concat(firstLetterUpper(firstName));
+    }
+
+    public String getFullName(boolean isCapital) {
+        String result = this.firstName+ " " + this.lastName;
+        return isCapital?result.toUpperCase():result.toLowerCase();
+    }
+
+
     public int getAge() {
         return this.age;
     }
-    public double getHeight(){
+
+    public double getHeight() {
         return this.height;
     }
+
     public String getOccupation() {
         return this.occupation;
     }
-    public String getOccupationRole( int num) {
-        return this.getOccupation().concat(" "+num);
+
+    public String getOccupationRole(int num) {
+        return this.getOccupation().concat(" " + num);
     }
 
-    //-----------------------------------------------
+    public int excel(String columnTitle) {
+        int sum =0;
+        sum+= columnTitle.charAt(0)-64;
+        for (int i = 1; i < columnTitle.length(); i++) {
+            sum+=columnTitle.charAt(i)-64;
+        }
+        return sum;
+    }
+
+    // -----------------------------------------------
     // testing
 
     public static void main(String[] args) {
-        //Person()
+        // Person()
         Person p1 = new Person();
-        p1.setName("john");
-        System.out.println(p1.name);
+        p1.setName("john", "Soon");
+        System.out.println(p1.lastName);
         Person p2 = new Person();
-        p2.setName("peter");
+        p2.setName("peter", "suen");
 
         Person p3 = p1;
-        System.out.println(p1.name);
-        p3.setName("mary");
-        System.out.println(p1.name); // as p3 point to p1 (same address), when p3 change address, p1 also change address, so p1 is "mary"
-        System.out.println(p3.name);
+        System.out.println(p1.lastName);
+        p3.setName("mary", "Lou");
+        System.out.println(p1.lastName); // as p3 point to p1 (same address), when p3 change address, p1 also change
+                                         // address, so p1 is "mary"
+        System.out.println(p3.lastName);
 
-        p2.setName("Peter");
-        p2 = p1;// as p2 point to p1, as p1 is mary, p2 also mary, 
-        p2.setName("Peter");
-        System.out.println(p1.name);// as p2 point to p1, as p2 is Peter, p1 also Peter
+        p2.setName("Peter", "Bei");
+        p2 = p1;// as p2 point to p1, as p1 is mary, p2 also mary,
+        p2.setName("Peter", "Hui");
+        System.out.println(p1.firstName);// as p2 point to p1, as p2 is Peter, p1 also Peter
 
-        //Person(String x)
-        Person s1 = new Person("hello",10);
-        System.out.println(s1.name);
+        // Person(String x)
+        Person s1 = new Person("hello", "world", 10);
+        System.out.println(s1.lastName);
         System.out.println(s1.age);
 
-        Person p4 = new Person("Tommy",20);
-        p4.setName("Jenny");
-        System.out.println(p4.getName());
+        Person p4 = new Person("Tommy", "Lie", 20);
+        p4.setName("Jenny", "Wo");
+        System.out.println(p4.getLastName());
         p2 = p4;
         p4 = p1;
-        System.out.println(p2.getName());
-        System.out.println(p1.getName());
+        System.out.println(p2.getFirstName());
+        System.out.println(p1.getLastName());
 
-        Person p5 = new Person("Rooo", 23);
+        Person p5 = new Person("Rooo", "hel", 23);
         p5.setAge(25);
         p5.setHeight(167.45);
         System.out.println(p5.getHeight());
@@ -109,7 +163,22 @@ public class Person { // 藍圖
         System.out.println(p6.getAge());
         System.out.println(p6.getOccupationRole(1));
 
+        Person p7 = new Person("Ku", "Rosa", 22);
+        System.out.println(p7.getFullName());
+
+        Person p8 = new Person("Lam", "Racoon", 127.3, 57, "programmer");
+        System.out.println(p8.getOccupationRole(1));
+        System.out.println(p8.getFullName());
+        System.out.println(p8.getFullName(true));
+        System.out.println(p8.getFullName());
+
+        Person p9 =new Person("koala", "tree", 50, 10, "Snapping");
+        System.out.println(p9.getFullName(false)+" with "+p9.height+"cm and "+p9.age+" year-old is "+p9.occupation);
+
+        System.out.println(p9.getNameFullLetter());
+
+        
+        
 
     }
 }
-
