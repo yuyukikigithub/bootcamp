@@ -14,8 +14,13 @@ public class Person { // 藍圖
     // ------------------------------------------------
 
     // constructor (produce Person's object)
-    public Person() {// create object
 
+    public Person() {// create object
+        
+    }
+
+    public Person(String lastname) {// create object
+        this.lastName = lastname;
     }
 
     // constructor () / method ?
@@ -27,12 +32,15 @@ public class Person { // 藍圖
 
     // constructor name cannot be different from class name
     public Person(String lastName, String firstName, double height, int age, String occu) {
-        this.lastName = lastName;
-        this.firstName = firstName;
+        // this.lastName = lastName;
+        // this.firstName = firstName;
+        // this.age = age;
+        this(lastName,firstName,age); //overloading , use above constructor's this
         this.height = height;
-        this.age = age;
         this.occupation = occu;
     }
+
+
 
     // ------------------------------------------------
 
@@ -106,13 +114,24 @@ public class Person { // 藍圖
         return this.getOccupation().concat(" " + num);
     }
 
-    public int excel(String columnTitle) {
-        int sum =0;
-        sum+= columnTitle.charAt(0)-64;
-        for (int i = 1; i < columnTitle.length(); i++) {
-            sum+=columnTitle.charAt(i)-64;
+    public static void swimming(){// cannot use object data
+        System.out.println("im swimming");
+    }
+
+    public void swim() {// void method can be with 'return' or without 'return'
+        int a=0;
+        if (a==1) {
+            return;
         }
-        return sum;
+        System.out.println(this.lastName+" is swimming");
+    }
+
+    public int eat(){// int method must be with return
+        int b=0;
+        if (b>10) {
+            return 10;
+        }
+        return -1;
     }
 
     // -----------------------------------------------
@@ -177,7 +196,10 @@ public class Person { // 藍圖
 
         System.out.println(p9.getNameFullLetter());
 
-        
+        // static vs instance method
+        Person p10=new Person("last");
+        p10.swim(); // instance method, work with attribute
+        Person.swimming();// static method, not belong to object cannot use object attribute, belong to class
         
 
     }

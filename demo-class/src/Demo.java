@@ -1,9 +1,12 @@
 public class Demo {
     public static void main(String[] args) {
         String str = new String("hello");
+        str=str.concat("str");// new object called 'str'
+        System.out.println(str);
         //call Person's constructor
         Person p1 = new Person();// p1's name -> null, p1's age -> 0
         
+        char[] cchar = new char[]{'d','e','r'}; 
     }
 
     public int maximum69Number (int num) {

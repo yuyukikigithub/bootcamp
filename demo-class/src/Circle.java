@@ -1,3 +1,4 @@
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
 public class Circle {
@@ -35,6 +36,12 @@ public class Circle {
         return Math.pow(this.radius,2)*Math.PI;
     }
 
+    public static double area(double radius){
+        BigDecimal r = BigDecimal.valueOf(radius);// to string
+        BigDecimal pi = BigDecimal.valueOf(Math.PI);
+        return r.multiply(r).multiply(pi).doubleValue();//to double value
+    }
+
     public static void main(String[] args) {
         Circle c1 = new Circle();
         c1.setRadius(3.14);
@@ -51,6 +58,8 @@ public class Circle {
         System.out.println("c1's radius = "+c1.getRadius());
         System.out.println("c1's diameter = "+c1.diameter());
         System.out.println("c1's area = "+c1.area());
+
+        Cat cat=new Cat();//empty constructor
     }
 
 }
