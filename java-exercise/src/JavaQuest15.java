@@ -19,19 +19,26 @@ public class JavaQuest15 {
     // Example 1
     String s1 = "foobar";
     char letter1 = 'o';
-    // System.out.println("Example 1 : " + percentageLetter(s1, letter1));
+    System.out.println("Example 1 : " + percentageLetter(s1, letter1));
 
     // Example 2
     String s2 = "jjjj";
     char letter2 = 'k';
-    // System.out.println("Example 2 : " + percentageLetter(s2, letter2));
+    System.out.println("Example 2 : " + percentageLetter(s2, letter2));
 
-    Integer i1 =  2/6;
-    System.out.println(Integer.parseInt(i1.toString()));
+
   }
 
-  // public static int percentageLetter(String s, char letter) {
-  //   // code here
-    
-  // }
+  public static int percentageLetter(String s, char letter) {
+    // code here
+    int range = s.length();
+    int count = 0;
+    for (int i = 0; i < s.length(); i++) {
+      if (s.charAt(i)==letter) {
+        count++;
+      }
+    }
+    double result=(double) count/range*100;
+    return (int) Math.round(result);
+  }
 }

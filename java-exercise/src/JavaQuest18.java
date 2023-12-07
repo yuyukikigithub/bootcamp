@@ -16,18 +16,32 @@ public class JavaQuest18 {
     System.out.println(firstPalindrome(testCase3)); // Output : "ADABCCBADA"
     System.out.println(firstPalindrome(testCase4)); // Output : "No Palindrome word in String Array."
 
+
+
   }
 
   private static boolean isPalindrome(String s) {
     // hints : if a String is Palindrome , return true
     //
+    for (int i = 0; i < s.length()/2; i++) {
+      if (s.charAt(i)!=s.charAt(s.length()-1-i)) {
+        return false;
+      }
+    }
     return true;
   }
 
   public static String firstPalindrome(String[] words) {
     // hints : finish the logic by using isPalindrome() , for-loop , if-else
-
-    return "";
+    String result="No Palindrome word in String Array.";
+    for (int i = 0; i < words.length; i++) {
+      if (isPalindrome(words[i])) {
+        result=words[i];
+        break;
+      }
+      
+    }
+    return result;
   }
 
 }
