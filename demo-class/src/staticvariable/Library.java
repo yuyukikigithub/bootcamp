@@ -11,7 +11,7 @@ public class Library {
 
     public Library(Librarian librarian){
         this.books=new Book[0];
-        Library.librarian=librarian; // Library.librarian vs this.librarian
+        Library.librarian=librarian; // Library.librarian vs this.librarian , refer to self class 
     }
 
     public String librarianName(){
@@ -41,6 +41,8 @@ public class Library {
 
         li1=li2; //pass by reference
         System.out.println(li1.librarianName());
+
+        
         
     }
 }
