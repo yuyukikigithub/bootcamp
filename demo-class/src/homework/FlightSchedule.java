@@ -53,7 +53,7 @@ public class FlightSchedule {
     }
 
     public static boolean isFanFare(LocalDateTime purchaseTime){
-        return (purchaseTime.getDayOfWeek()==FlightSchedule.fanFareDayOfWeek && purchaseTime.getHour()==FlightSchedule.fanFareHour);
+        return (purchaseTime.getDayOfWeek()==fanFareDayOfWeek && purchaseTime.getHour()==fanFareHour);
     }
 
     public static double ticketClassStdPrice(Passenger psg){
@@ -79,6 +79,16 @@ public class FlightSchedule {
         psgArr[this.passengers.length]=passenger;
         this.passengers=psgArr;
         return passenger;
+    }
+
+    public double getFullStandardPrice(){
+        return fullStandardPrice;
+    }
+    public DayOfWeek getFanFareDayOfWeek(){
+        return fanFareDayOfWeek;
+    }
+    public int getFanFareHour(){
+        return fanFareHour;
     }
 
     public double getTotalReceipt(){
@@ -107,7 +117,7 @@ public class FlightSchedule {
         System.out.println(p2.getIsFanFare());
         f1.addPessenger(p2);
         System.out.println(f1.getTotalReceipt());
-        Passenger p3 = new Passenger("economy",'M', 50, false, LocalDateTime.of(2023, 11, 21, 16, 0, 0));
+        Passenger p3 = new Passenger("economy",'M', 50, false, LocalDateTime.of(2023, 11, 20, 16, 0, 0));
         System.out.println(p3.getIsFanFare());
     }
 }

@@ -1,6 +1,9 @@
 import java.util.Arrays;
 
 public class Cat extends Animal{
+    public Cat(){
+        
+    }
 
     public Cat(int age){
         super(age); // based on access to Aninal's constructor

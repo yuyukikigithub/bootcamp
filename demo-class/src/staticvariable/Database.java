@@ -94,5 +94,11 @@ public class Database {
         System.out.println(Database.get(1));
         System.out.println(Arrays.toString(Database.getAllStrings()));
 
+        String s1 = "abc";
+        StringBuilder ss1=new StringBuilder("abc");
+        ss1.reverse();
+        System.out.println(ss1);
+        
+       
     }
 }

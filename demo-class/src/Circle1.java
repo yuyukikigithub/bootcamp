@@ -1,21 +1,21 @@
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
-public class Circle {
+public class Circle1 {
     //-------------------
     //attribute -> raw data to describe object
     private double radius;
     private String color;
     //-------------------------------
     //constructor -> create object
-    public Circle() {
+    public Circle1() {
 
     }
 
     // always write 'this' in constructor and method !!!
     // this 內在 attribute, 外來 pass parameter,thats it
 
-    public Circle(double radius){
+    public Circle1(double radius){
         this.radius = radius;
     }
     //getter
@@ -43,13 +43,13 @@ public class Circle {
     }
 
     public static void main(String[] args) {
-        Circle c1 = new Circle();
+        Circle1 c1 = new Circle1();
         c1.setRadius(3.14);
         System.out.println("c1's radius = "+c1.getRadius());
         System.out.println("c1's diameter = "+c1.diameter());
         System.out.println("c1's area = "+c1.area());
 
-        Circle c2 = new Circle(3.15);
+        Circle1 c2 = new Circle1(3.15);
         System.out.println("c2's radius = "+c2.getRadius());
         System.out.println("c2's diameter = "+c2.diameter());
         System.out.println("c2's area = "+c2.area());
