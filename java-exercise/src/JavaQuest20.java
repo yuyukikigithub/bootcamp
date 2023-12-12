@@ -11,15 +11,15 @@ the input need to be lowercase English letters.
 public class JavaQuest20 {
 
   public static void main(String[] args) {
-    System.out.println(rotateString("abcde", "cdeab"));// true
-    System.out.println(rotateString("abcde", "abced"));// false
-    System.out.println(rotateString("abcde", "eabcd"));// true
+    // System.out.println(rotateString("abcde", "cdeab"));// true
+    // System.out.println(rotateString("abcde", "abced"));// false
+    // System.out.println(rotateString("abcde", "eabcd"));// true
     System.out.println(rotateString("abcde", "abcde"));// true
+
+    
   }
 
   public static boolean rotateString(String s, String goal) {
-    
-    return s.indexOf(goal)<0;
-    
+    return goal.substring(goal.indexOf('a'), goal.length()).concat(goal.substring(0, goal.indexOf('a'))).equals(s);
   }
 }

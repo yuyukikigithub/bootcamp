@@ -18,6 +18,13 @@ public class JavaQuest21 {
 
   public static boolean isThreeDivisors(int n) {
     // finish the code
-    return n%3!=0 && n!=1;
+    int idx=0;
+    for (int i = 1; i < 50; i++) {
+      if (n%i==0) {
+        idx++;
+      }
+    }
+    if (idx==3) return true;
+    return false;
   }
 }
