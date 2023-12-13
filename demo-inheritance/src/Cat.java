@@ -49,5 +49,8 @@ public class Cat extends Animal{
         String pre = a[0].substring(0, i);
         System.out.println(pre);
 
+        // super call constructor
+
+
     }
 }

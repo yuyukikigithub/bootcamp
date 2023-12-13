@@ -1,6 +1,8 @@
 import java.math.BigDecimal;
 
-public abstract class Shape { // abstract class vs class
+// no abstract class, no abstract method
+public abstract class Shape { // abstract class vs class, abstract must be parent,
+    // no implementation, eg area, no code block
     // Difference
     // 1. abstract class cannot be new
     // 2. may contain abstract method(s),implicitly public
@@ -13,7 +15,7 @@ public abstract class Shape { // abstract class vs class
 
     private String color;
 
-    // constructor
+    // constructor, but cannot new (for super), because parent can be heap memory
     public Shape(){
         
     }
@@ -31,14 +33,16 @@ public abstract class Shape { // abstract class vs class
     public static double totalArea(Shape[] shapes){
         BigDecimal result = BigDecimal.valueOf(0);
         for (Shape shape : shapes) {
-            result = result.add(BigDecimal.valueOf(shape.area()));
+            result = result.add(BigDecimal.valueOf(shape.area()));// shape.area()->runtime->which object (circle/squre)-> diff implementation
         }
         return result.doubleValue();
     }
 
     public static void main(String[] args) {
+
+        String ss1 = "hello";//"hello" is string object, s is String type object reference
         // Shape sh = new Shape() ;
-        Shape s1 = new Circle(2.3,"red"); // polymorphism
+        Shape s1 = new Circle(2.3,"red"); // polymorphism, object is Circle, state is Shape, 多樣態
         // java compile time : s1 has area() method, getColor(), getRadius()
 
         // left hand side, object reference 
@@ -65,5 +69,9 @@ public abstract class Shape { // abstract class vs class
 
         long l2= (long) d2; // downcast double to long
         System.out.println(l2==d2); // false, not the same object
+
+        Shape[] shapes = new Shape[]{new Circle(4.2),new Square(3)};
+        System.out.println(totalArea(shapes));
+
     }
 }

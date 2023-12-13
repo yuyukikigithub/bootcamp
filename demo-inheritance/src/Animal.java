@@ -1,4 +1,4 @@
-public class Animal { // abstract
+public abstract class Animal { // abstract, to be parent, cannot be new
     private int age;
 
     public Animal(){

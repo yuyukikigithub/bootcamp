@@ -1,3 +1,4 @@
+
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -30,15 +31,24 @@ public class DemoLocalDate {
 
         int i1=4;
         int i2=4;
-        System.out.println(i1==i2);
+        System.out.println(i1==i2);// true
 
         Integer ii1=127;
         Integer ii2=127;
-        System.out.println(ii1==ii2);// false
+        System.out.println(ii1==ii2);// true
 
         byte b1=(byte) 4;
         byte b2=(byte) 4;
-        System.out.println(b1==b2);
+        System.out.println(b1==b2); // true
+        System.out.println("");
+
+        char ch = 'a';
+        System.out.println((int)ch);
+
+        char ch1='1';
+        System.out.println((int)ch1);
+        
+        
         
         
     }
