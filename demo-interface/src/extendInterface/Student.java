@@ -1,6 +1,7 @@
 package extendInterface;
 
 import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class Student implements Exam{
     private String name;
@@ -42,12 +43,15 @@ public class Student implements Exam{
         return this.studyHour/2>this.syllabus.length;
     }
     public static void main(String[] args) {
-        Student s1=new Student("Mary", 12);
-        s1.setStudyHour(5);
-        s1.addSyllabus("Chinese");
-        s1.addSyllabus("English");
-        s1.addSyllabus("PureMath");
-        System.out.println(s1.isPassed());
+        Student ss1=new Student("Mary", 12);
+        ss1.setStudyHour(5);
+        ss1.addSyllabus("Chinese");
+        ss1.addSyllabus("English");
+        ss1.addSyllabus("PureMath");
+        System.out.println(ss1.isPassed());
 
+        
+        
+    
     }
 }
