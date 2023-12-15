@@ -1,3 +1,5 @@
+
+
 public class DemoObject { // implicitly extends Object, if not listout, auto extend
 
     public void run() {
@@ -44,7 +46,11 @@ public class DemoObject { // implicitly extends Object, if not listout, auto ext
         Cat1 cat1 = new Cat1("Prince", 10);
         Cat1 cat2 = new Cat1("Kimberley", 15);
         Cat1 cat3 = cat1;
-        System.out.println(cat1.equals(cat3));
+        Cat1 cat4 = new Cat1("Prince", 10);
+        
+        System.out.println(cat1.equals(cat3));//true
+        System.out.println(cat1.equals(cat4)); // true
+        
 
     }
     // String
