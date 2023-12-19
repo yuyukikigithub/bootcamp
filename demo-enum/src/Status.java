@@ -18,4 +18,8 @@ public enum Status {
     public char getVal(){
         return this.val;
     }
+
+    public static void main(String[] args) {
+        System.out.println();
+    }
 }

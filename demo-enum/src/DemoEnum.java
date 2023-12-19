@@ -3,7 +3,6 @@ public class DemoEnum {
         String color = "red";
 
         
-
     }
     public static int color (String color){
         if (color.equals("red")) {
