@@ -47,8 +47,10 @@ public class DemoObject { // implicitly extends Object, if not listout, auto ext
         Cat1 cat2 = new Cat1("Kimberley", 15);
         Cat1 cat3 = cat1;
         Cat1 cat4 = new Cat1("Prince", 10);
+        // System.out.println(cat1.getEyes().toString());
+        // System.out.println(cat4.getEyes());
         
-        System.out.println(cat1.equals(cat3));//true
+        // System.out.println(cat1.equals(cat3));//true
         System.out.println(cat1.equals(cat4)); // true
         
 

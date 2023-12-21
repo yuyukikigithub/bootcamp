@@ -33,4 +33,13 @@ public class Eye {
     public int hashCode() {// hashCode -> represent object address
         return Objects.hash(this.color, this.radius);
     }
+    @Override
+    public String toString(){
+        return  "Eye("+this.color+","+this.radius+")";
+    }
+    public static void main(String[] args) {
+        Eye e1 = new Eye("Red", 2);
+        Eye e2 = new Eye("Red", 2);
+        System.out.println(e1.equals(e2));
+    }
 }

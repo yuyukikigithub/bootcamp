@@ -21,9 +21,9 @@ public class Cat1 {
     public int getAge(){
         return this.age;
     }
-    public Eye[] getEyes(){
-        return this.eyes;
-    }
+    // public Eye[] getEyes(){
+    //     return this.eyes;
+    // }
 
     // to create @Override method, because there is the same method in Objects
     @Override
@@ -40,12 +40,12 @@ public class Cat1 {
         //認是否同一object, 介定all attributes is equal 
         // return cat.getAge()==this.getAge() && cat.getName().equals(this.name);
         return Objects.equals(cat.getAge(), this.age) 
-            && Objects.equals(cat.getName(), this.name)
-            && Objects.equals(cat.getEyes(), this.eyes);
+            && Objects.equals(cat.getName(), this.name);
+            // && Objects.equals(cat.getEyes(), this.eyes);
     }
 
     @Override
     public int hashCode(){ // hashcode -> object address
-        return Objects.hash(this.name, this.age, this.eyes);//認同一object, write all attributes in blanket
+        return Objects.hash(this.name, this.age);//認同一object, write all attributes in blanket
     }
 }

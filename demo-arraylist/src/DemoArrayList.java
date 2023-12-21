@@ -59,8 +59,18 @@ public class DemoArrayList {
         strings2.remove("ABC");// method on List
         
         System.out.println(strings2.subList(0, 1));// 用list instead of arraylist 接住
+        System.out.println(strings2.contains("pig"));
+        System.out.println(strings2.isEmpty());
 
+        List<String> arrlist1 =new ArrayList<>(List.of("Yuki","Holy"));
+        List<String> arrlist2 =(List.of("Yuki","Holy"));
         
+        arrlist1.add("Betty");
+        arrlist1.remove("Yuki");
 
+        // arrlist2.add("Betty"); // java.lang.UnsupportedOperationException
+        // arrlist2.set(0, "Betty"); // java.lang.UnsupportedOperationException
+        
+    
     }
 }
