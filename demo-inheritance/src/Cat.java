@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Cat extends Animal{
+public class Cat extends Animalmal{
     public Cat(){
         
     }

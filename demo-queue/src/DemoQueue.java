@@ -1,8 +1,6 @@
 import java.util.Deque;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 import java.util.Queue;
 
 public class DemoQueue {
@@ -33,7 +31,7 @@ public class DemoQueue {
         System.out.println(dq1);
         dq1.removeLast();
         System.out.println(dq1);
-                System.out.println(dq1.peekLast());
+        System.out.println(dq1.peekLast());
         dq1.pollLast();
         System.out.println(dq1);
         dq1.pollFirst();

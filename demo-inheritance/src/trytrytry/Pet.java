@@ -20,5 +20,9 @@ public abstract class Pet {
     public void sleeping(){
         System.out.println("im sleeping");
     }
+    @Override
+    public String toString(){
+        return "Pet( "+this.name+", "+this.age+")";
+    }
 
 }

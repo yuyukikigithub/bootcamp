@@ -1,11 +1,11 @@
-public abstract class Animal { // abstract, to be parent, cannot be new
+public abstract class Animalmal { // abstract, to be parent, cannot be new
     private int age;
 
-    public Animal(){
+    public Animalmal(){
         
     }
 
-    public Animal(int age){
+    public Animalmal(int age){
         this.age=age;
     }
 

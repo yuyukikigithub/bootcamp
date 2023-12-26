@@ -15,12 +15,16 @@ public class Piglet extends Pet implements FireFighting{
     String makeSound() {
         return "gurd gurd !!";
     }
+    @Override
+    public String toString(){
+        return "Piglet("+this.name+","+this.age+")";
+    }
 
     
 
     public static void main(String[] args) {
-        Pet p1 = new Piglet("piggy", 2);
-        System.out.println(p1.makeSound());
+        Piglet p1 = new Piglet("piggy", 2);
+        System.out.println(p1);
     }
 
     @Override
