@@ -1,16 +1,19 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 
 public class FatherDog extends Animal implements DogDog, Comparable<FatherDog>{
 
     private String name;
     private LocalDate birth;
-    private char gender;
+    private Gender gender;
 
     public FatherDog(){
         
     }
-    public FatherDog(String name, LocalDate birth, char gender){
+    public FatherDog(String name, LocalDate birth, Gender gender){
         this.name=name;
         this.birth=birth;
         this.gender=gender;
@@ -24,7 +27,7 @@ public class FatherDog extends Animal implements DogDog, Comparable<FatherDog>{
     }
     @Override
     public void setGender(char gender) {
-        this.gender=gender;
+        this.gender=Gender.fromGender(gender);
     }
 
     public String getName() {
@@ -35,7 +38,7 @@ public class FatherDog extends Animal implements DogDog, Comparable<FatherDog>{
         return this.birth;
     }
 
-    public char getGender() {
+    public Gender getGender() {
         return this.gender;
     }
     @Override
@@ -87,9 +90,19 @@ public class FatherDog extends Animal implements DogDog, Comparable<FatherDog>{
 
     
     public static void main(String[] args) {
-        FatherDog fd1=new FatherDog("FatherDog1",LocalDate.of(2023, 10, 11),'M');
+        FatherDog fd1=new FatherDog("FatherDog1",LocalDate.of(2023, 10, 11),Gender.MALE);
         System.out.println(fd1);
         fd1.breath();
+        FatherDog fd2=new FatherDog("FatherDog2",LocalDate.of(2023, 10, 13),Gender.FEMALE);
+        FatherDog fd3=new FatherDog("FatherDog1",LocalDate.of(2023, 10, 10),Gender.MALE);
+        
+        List<FatherDog> fdArr=new ArrayList<>();
+        fdArr.add(fd1);
+        fdArr.add(fd2);
+        fdArr.add(fd3);
+        Collections.sort(fdArr);
+        System.out.println(fdArr);
+        System.out.println(fd3.getGender());
 
     }
 }

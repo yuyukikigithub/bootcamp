@@ -8,7 +8,7 @@ public class SonDoggie extends FatherDog implements YoungDog{
     public SonDoggie() {
         super();
     }
-    public SonDoggie(String string, LocalDate of, char c) {
+    public SonDoggie(String string, LocalDate of, Gender c) {
         super(string, of, c);
     }
 
@@ -28,8 +28,8 @@ public class SonDoggie extends FatherDog implements YoungDog{
         sd1.setName("BabyDog1");
         sd1.setBirth(LocalDate.of(2023, 9, 10));
         sd1.setGender('F');
-        SonDoggie sd2 = new SonDoggie("BabyDog2", LocalDate.of(2023, 11, 1), 'M');
-        SonDoggie sd3 = new SonDoggie("BabyDog2", LocalDate.of(2023, 11, 10), 'F');
+        SonDoggie sd2 = new SonDoggie("BabyDog2", LocalDate.of(2023, 11, 1), Gender.MALE);
+        SonDoggie sd3 = new SonDoggie("BabyDog2", LocalDate.of(2023, 11, 10), Gender.FEMALE);
 
         
         System.out.println(sd1);

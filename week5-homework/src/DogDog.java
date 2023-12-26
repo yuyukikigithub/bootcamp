@@ -7,6 +7,6 @@ public interface DogDog {
     void setGender(char gender);
     String getName();
     LocalDate getBirth();
-    char getGender();
+    Gender getGender();
     
 }
