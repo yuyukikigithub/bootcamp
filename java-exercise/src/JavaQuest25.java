@@ -20,18 +20,6 @@ public class JavaQuest25 {
     System.out.println(countWords("Hello, my name is John."));// 5
     System.out.println(countWords(" . "));// 1 trim
 
-    String s = "Hello, my name is John.";
-    s.trim();
-    String[] sa=s.split(" ");
-    System.out.println(s);
-    Queue<String> ss = new LinkedList<>();
-    // ss.offer(sa);
-    System.out.println(ss.size());
-    
-
-    // String[] str = s.split(" ");
-    // ArrayList arr = new ArrayList<>(List.of(str));
-    // System.out.println(arr.size());
 
 
 
@@ -41,17 +29,12 @@ public class JavaQuest25 {
     // code here ...
 
     int cnt=0;
-    // char[] charArr = s.toCharArray();
-    // int idx=0;
-    // while (idx<charArr.length) {
-    //   if (!(charArr[idx]==(' '))) {
-    //     cnt++;
-    //   }
-    //   idx++;
-    // }
+    if (s.length()>0 && !(s.isBlank())) {
+      String ss=s.trim();
+      String[] charArr = ss.split(" ");
+      cnt=charArr.length;
+    }
     return cnt;
 
-
-    
   }
 }

@@ -1,10 +1,12 @@
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedList;
 import java.util.List;
+import java.util.Set;
 
 public class DemoComparable {
     public static void main(String[] args) throws Exception {
-
         
         List<Student1> students = new ArrayList<>();
         students.add(new Student1(40,"John"));
@@ -23,10 +25,12 @@ public class DemoComparable {
         Collections.sort(students,new SortByName());
         System.out.println(students);
 
-        List<List<String>> paths = new ArrayList<>();
-        paths.add(List.of("London","New York"));
-        paths.add(List.of("New York","Lima"));
-        paths.add(List.of("Lima","Sao Paulo"));
-        System.out.println(paths.get(paths.size()-1).get(1));
+        Set<String> sset=new HashSet<>();
+        sset.add("Alice");
+        sset.add("Bob");
+        sset.add("Charles");
+        sset.add("Bob");
+        System.out.println(sset);
+        
     }
 }

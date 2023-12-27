@@ -40,11 +40,11 @@ public class  Box<T> { // will use type T in the class
     public static void addShape(List<Shape > ls, Shape shape){
         ls.add(shape); //  
     }
-    public static  void addShape2(List<? extends Shape > ls, Shape shape){// Shape -- lower bound
+    public static  void addShape2(List<? extends Shape > ls, Shape shape){// Shape -- upper bound
         List<Shape> ls2=(List<Shape>) ls; // fix the content of List to Shape
         ls2.add(shape); 
     }
-    public static void addShape3(List<? super Circle > ls, Shape shape){ // Circle -- upper Bound
+    public static void addShape3(List<? super Circle > ls, Shape shape){ // Circle -- lower Bound
         // List<Object> ls2 = (List<Object>) ls;
         // ls2.add(shape); //  
         ls.add(new SmallCircle(3.2)); // SmallCircle can be added directly coz lower than Circle
@@ -101,11 +101,7 @@ public class  Box<T> { // will use type T in the class
         List<? super Circle> cir2 = new ArrayList<>();
         cir2.add(new SmallCircle(54.2));
         
-        int in = -14;
-        System.out.println(Math.abs(in));
-
-        int max=Integer.MIN_VALUE;
-
+        
         
     }
 }

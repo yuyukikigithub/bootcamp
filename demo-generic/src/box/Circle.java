@@ -10,4 +10,8 @@ public class Circle extends Shape{
     public double area(){
         return this.radius*this.radius*Math.PI;
     }
+    @Override
+    public String toString(){
+        return "Circle("+this.radius+")";
+    }
 }
