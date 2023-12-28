@@ -17,6 +17,13 @@ public class DemoCheckException {
             // throw new BusinessExeception("cannot handle message");
             System.out.println("An exception occurred: " + e.getMessage());
         }
+        try {
+            int[] numbers = {1, 2, 3};
+            int result = numbers[4];
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
+       
     }
 
     // if method throw exception, must be try catch when calling
@@ -27,7 +34,7 @@ public class DemoCheckException {
         if (emailAddr==null ||emailAddr.length()>20) 
             // return false;
             // throwable or lower
-            throw new BusinessExeception("email address is too long. should be<= 20");
+            throw new BusinessExeception(SysCode.EMAIL_TOO_LONG);
         return true;
     }
     public static boolean isEmailValid2(String emailAddr) throws BusinessExeception {
@@ -39,7 +46,7 @@ public class DemoCheckException {
             return false;
         }
         // for unexpected case
-        throw new BusinessExeception("hello");
+        throw new BusinessExeception(SysCode.EMAIL_TOO_LONG);
     }
     // public static boolean isEmailValid2(String emailAddr) throws BusinessExeception {
     //     if (emailAddr !=null && emailAddr.length()>20) {
