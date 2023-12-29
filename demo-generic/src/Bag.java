@@ -25,7 +25,7 @@ public class Bag<T> { // <T> is a scope (No scope - you can put any class for T)
     public static void main(String[] args) {
         Bag<Integer> bag = new Bag<>();
         Bag<Long> bag2 = new Bag<>();
-        Bag.get("ehfo");
+        System.out.println(Bag.get("ehfo"));
         Bag.setThin("iamthin");
         System.out.println(Bag.thin);
 

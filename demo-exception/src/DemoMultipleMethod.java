@@ -27,25 +27,28 @@ public class DemoMultipleMethod {
             if (e instanceof IOException) {
                 System.out.println("e is IOException"); //can do 
             }
-        } finally{
-            System.out.println("finally try"); //e.g. reset sth
+            if (e instanceof RuntimeException) {
+                System.out.println("e is RuntimeException"); //can do 
+            }
+        }finally{
+            
         }
         System.out.println("end main");
 
         
     }
-    public static int methodA(int x, int y)throws Exception{
+    public static int methodA(int x, int y) throws Exception{
         return methodB(x,y); // if throws IOException, cannot
     }
-    public static int methodB(int x, int y)throws Exception{
+    public static int methodB(int x, int y) throws Exception{
         // return methodC(x,y); // unchecked
         return methodD(x,y); // checked
     }
-    public static int methodD(int x, int y) throws Exception{
+    public static int methodD(int x, int y) throws Exception {
        if (x+y>10) return x+y;
         throw new IOException();
     }
-    public static int methodC(int x, int y) throws RuntimeException{ // polymorphism
+    public static int methodC(int x, int y) { // polymorphism
         // what is diff between throwing checked or unchecked exception in methodC?
         
         // if (y==0) {
