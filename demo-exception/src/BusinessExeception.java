@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class BusinessExeception extends Exception {
     
     private int code;
@@ -22,5 +24,19 @@ public class BusinessExeception extends Exception {
         } catch (Exception e) {
             
         }
+        
+        char kno= 'k';
+        int kn = (char) kno;
+        System.out.println(kn);
+
+        String message = "sidbfiuf";
+        String key="jsigob";
+        char[] asKey = message.replace(" ","").toCharArray();
+        // char[] temp = key.toCharArray();
+        // char[] result = new char[temp.length];
+        // for(int i=0; i<temp.length;i++){
+        //     result[i]=(temp[i]==' ')? ' ': (char)asKey.indexOf(temp[i])+96;
+        // }
+        // return String.valueOf(result);
     }
 }

@@ -17,7 +17,7 @@ public class DemoFunction {
         //R apply (T,t) R..Integer , T String
         Function<String , Integer> stringLength =(str)->{
             return str.length();
-        }  ;
+        };
 
         System.out.println(stringLength.apply("hello"));
         System.out.println(stringLength.apply("eiebriwbi"));
@@ -53,5 +53,14 @@ public class DemoFunction {
         dicMap.compute("Peter",remapFunc);
         System.out.println(dicMap.get("Peter"));
         System.out.println(dicMap.size());
+
+        BiFunction<Double,Double,Double> doubleDouble=(doub1, doub2)->{
+            return (double) doub1+doub2;
+        } ;
+        
+        System.out.println(doubleDouble.apply(23.5, 34.6));
+        
+        
+        
     }
 }
