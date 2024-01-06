@@ -35,7 +35,7 @@ class Exercise32 {
     private static String holder[] = { "Nish", "Shubh", "Sush", "Abhi", "Akash" };
     // store account balances
     private static double balance[] = { 10000.00, 12000.00, 5600.0, 999.00, 1100.55 };
-
+    //{ 10000.00, 12000.00, 5600.0, 999.00, 1100.55 }
     public static void main(String[] args) {
 
         try {
@@ -44,14 +44,17 @@ class Exercise32 {
 
             for (int i = 0; i < 5; i++) {
                 // display the actual account data for all account holders
-
+                System.out.println((i>=accNo.length?"":accNo[i]) + "\t" + holder[i] + "\t" + balance[i]);
                 // display own exception if balance < 1000
+                if (balance[i]<1000) {
+                    throw new CustomException("balance < 1000");
+                }
             }
             System.out.println("This is the end of the program, but it would not come here.");
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
-            
+            System.out.println("This is the end of the program, finally come here.");
         }
     }
 }

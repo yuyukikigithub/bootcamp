@@ -3,6 +3,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Objects;
 import java.util.Optional;
+import java.util.OptionalDouble;
 
 public class DemoOptional {
     public static void main(String[] args) {
@@ -53,12 +54,20 @@ public class DemoOptional {
         Optional<Account> neo = Optional.ofNullable(null);
         Account acct1 =neo.orElse(new Account(100, 0.1));
         Account acct2 =neo.orElseGet(()->new Account(100, 0.2));
-        Account acct3 =neo.orElseThrow(()->new NoSuchElementException());
-        System.out.println(acct3);
+        // Account acct3 =neo.orElseThrow(()->new NoSuchElementException());
+        // System.out.println(acct3);
 
         Optional<String> optionalValue = Optional.ofNullable(null);
         System.out.println(optionalValue);
         
+        OptionalDouble maxBalance=accounts.stream() 
+                                    .mapToDouble(e->e.getBalance())
+                                    .max();
+        double max=0;
+        if (maxBalance.isPresent()) {
+            max=maxBalance.getAsDouble();
+        }
+        System.out.println(max=maxBalance.orElse(-1.0));;
         
     }
     public static Optional<Account> isReturn(Optional<Account> opt){

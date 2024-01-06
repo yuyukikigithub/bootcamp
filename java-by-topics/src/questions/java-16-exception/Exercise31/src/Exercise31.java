@@ -30,7 +30,7 @@ class Exercise31 {
         }
         // Catch block to handle NumberFormatException
         // exception, which doesn't matches with ArithmeticException
-        catch (NumberFormatException ex) {
+        catch (NumberFormatException ex) { // cannot catch this exception
             // Display message when exception occurs
             System.out.println(
                     "NumberFormatException is occurred");
@@ -38,13 +38,28 @@ class Exercise31 {
         return res;
     }
 
+    
+
     public static void main(String args[]) {
 
         int a = 1;
         int b = 0;
 
         // Think about how to catch exception
-        int i = computeDivision(a, b);
-        System.out.println(i);
+        // int i = computeDivision(a, b);
+        // System.out.println(i);
+
+        try{
+            int i = computeDivision(a, b);
+            System.out.println(i);
+        } catch(NumberFormatException ex){
+            System.out.println("hey here is number format exception");
+        }catch(ArithmeticException ex){
+            System.out.println(
+                    ex.getMessage());
+        }
+
+        
+        
     }
 }

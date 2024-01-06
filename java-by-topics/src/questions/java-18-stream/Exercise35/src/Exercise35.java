@@ -62,7 +62,16 @@ class Exercise35 {
         // Implement stream reduce() method to sum up all even numbers from ArrayList anotherNumbers
         // By using lambda expression
         // Code here ...
-        Integer result = anotherNumbers.stream().filter(e->e%2==0).reduce(0,(a,b)->a+b);
-        System.out.println("The sum is "+result);
+        Integer num = anotherNumbers.stream().filter(e->e%2==0).reduce(0,(a,b)->a+b);
+        System.out.println("The sum is "+num);
+
+        
+
+
+
+       
+        
     }
+    
+        
 }
