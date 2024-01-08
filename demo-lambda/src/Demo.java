@@ -37,6 +37,8 @@ public class Demo {
         Calculatee multiply = (price,quantity)-> price*quantity;
         
         System.out.println(multiply.compute(4,7));
+
+        System.out.println(App.haha(2,4,(a,b)->a+b));
     }
 
 }

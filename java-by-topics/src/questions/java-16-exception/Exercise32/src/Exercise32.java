@@ -47,12 +47,13 @@ class Exercise32 {
                 System.out.println((i>=accNo.length?"":accNo[i]) + "\t" + holder[i] + "\t" + balance[i]);
                 // display own exception if balance < 1000
                 if (balance[i]<1000) {
-                    throw new CustomException("balance < 1000");
+                    throw new CustomException("balance<1000");
                 }
             }
             System.out.println("This is the end of the program, but it would not come here.");
         } catch (Exception e) {
             e.printStackTrace();
+            // System.out.println("catch exception");
         } finally {
             System.out.println("This is the end of the program, finally come here.");
         }

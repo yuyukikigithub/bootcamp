@@ -15,6 +15,9 @@ import java.util.Scanner;
  */
 class Exercise29 {
     // Code here, generic method genericDisplay()
+    public static <T> void genericDisplay(T t){
+        System.out.println(t.getClass()+" = "+t);
+    }
 
     // Driver method
     public static void main(String[] args) {
