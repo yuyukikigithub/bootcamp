@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -83,6 +84,10 @@ class App {
 
         // Map<Boolean,List<String>> sai=efg.collect(Collectors.partitioningBy(e->e.length()==5));
         // System.out.println(sai);
+
+        Optional<String> strr=Optional.ofNullable(null);
+        String stgr=strr.orElseGet(()->"null la");
+        System.out.println(stgr);
 
     }
 }
