@@ -1,9 +1,11 @@
+
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -23,6 +25,19 @@ interface EmployeeWithName {
     Employee get(String name);
 }
 
+class Try{
+    public static void main(String[] args) {
+        List<Integer> str = new ArrayList<>();
+        str.add(1);
+        str.add(2);
+        str.add(3);
+        str.stream().map(e->{
+            System.out.print(e);
+            return e+1;
+        }).forEach(System.out::print);
+
+    }
+}
 class Employee {
     private String name;
 
@@ -88,6 +103,7 @@ class App {
         Optional<String> strr=Optional.ofNullable(null);
         String stgr=strr.orElseGet(()->"null la");
         System.out.println(stgr);
+
 
     }
 }
