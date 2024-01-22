@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.vtnlab.bootcamp.Calculator2Test
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.076 s <<< FAILURE! - in com.vtnlab.bootcamp.Calculator2Test
+testSubstract  Time elapsed: 0.015 s  <<< FAILURE!
+org.opentest4j.AssertionFailedError: expected: <10352> but was: <10202>
+	at com.vtnlab.bootcamp.Calculator2Test.testSubstract(Calculator2Test.java:45)
+

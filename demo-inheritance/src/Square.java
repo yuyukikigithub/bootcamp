@@ -16,4 +16,5 @@ public class Square extends Shape {
         return Math.pow(this.length,2);
     }
     
+    
 }

@@ -1,3 +1,5 @@
+
+
 class ListNode {
     int val;
     ListNode next;
@@ -9,17 +11,15 @@ class ListNode {
     public String toString(){
         StringBuilder sb = new StringBuilder("[");
         ListNode temp=this;
-        int idx = 1;
+        
         sb.append(temp.val);
         while (temp.next!=null) {
-            
             if (temp.next!=null) {
                 temp=temp.next;
                 sb.append(", ").append(temp.val);
             }
-            idx++;
         }
-        return sb.append("] "+idx).toString();
+        return sb.append("] ").toString();
     }
 
     public static void main(String[] args) {
@@ -28,9 +28,10 @@ class ListNode {
         nono.next.next=new ListNode(5);
         nono.next.next.next=new ListNode(6);
 
-        System.out.println(nono);
-        
+        // System.out.println(nono);
     }
+
+    
 }
 
 class TreeNode {

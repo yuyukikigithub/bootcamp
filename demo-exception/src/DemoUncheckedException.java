@@ -2,6 +2,7 @@
 
 public class DemoUncheckedException {
     private int balance;
+    
     public static void main(String[] args) {
         //unchecked exception == runtime exception
         // 1. You are not required to handle exception thrown in the method
