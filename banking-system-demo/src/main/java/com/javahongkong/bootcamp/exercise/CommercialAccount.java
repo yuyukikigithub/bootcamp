@@ -24,6 +24,11 @@ public class CommercialAccount extends Account{
 	 */
 	protected void addAuthorizedUser(Person person) {
 		// complete the function
+		for (Person p : authorizedUsers) {
+			if (p.getFirstName().equals(person.getFirstName())&& p.getLastName().equals(person.getLastName())&& p.getIdNumber()==(person.getIdNumber()) ) {
+				return;
+			}
+		}
 		this.authorizedUsers.add(person);
 	}
 

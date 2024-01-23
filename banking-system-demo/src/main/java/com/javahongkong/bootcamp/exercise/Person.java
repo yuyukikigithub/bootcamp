@@ -3,7 +3,6 @@ package com.javahongkong.bootcamp.exercise;
 public class Person extends AccountHolder{
 	private String firstName;
 	private String lastName;
-	private int idNumber;
 
 	public Person(int idNumber) {
 		// complete the function
